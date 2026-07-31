@@ -7649,9 +7649,9 @@ def main_v9_daily() -> None:
             "n_gauges": len(gauge_routings),
             "sample_cells_per_gauge": MULTIGAUGE_SAMPLE_CELLS_PER_GAUGE,
             "gauge_weights": json.dumps({
-    str(routing["station_id"]): float(routing["calibration_weight"])
-    for routing in gauge_routings.values()
-}),
+                str(routing["station_id"]): float(routing["calibration_weight"])
+                for routing in gauge_routings.values()
+            }),
             "objective_weight_nse": DCFG.OBJECTIVE_WEIGHT_NSE,
             "objective_weight_kge": DCFG.OBJECTIVE_WEIGHT_KGE,
             "objective_weight_pbias": DCFG.OBJECTIVE_WEIGHT_PBIAS,
