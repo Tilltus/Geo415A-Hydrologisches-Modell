@@ -8,17 +8,8 @@ Berücksichtigt werden Niederschlag, potenzielle und tatsächliche Evapotranspir
 
 ## Voraussetzungen
 
-- Python 3.x
-- numpy
-- pandas
-- matplotlib
-- geopandas
-- rasterio
-- shapely
-- affine
-- scipy
-- xarray
-- netCDF4 oder ein anderes NetCDF-Backend
+- entwickelt und getestet mit Python 3.14 (der Großteil der Packages ab 3.10 oder höher verfügbar)
+- benötigte Pythonpakete gemäß `requirements.txt`
 
 Installation:
 
@@ -46,7 +37,11 @@ Die Eingangsdaten werden unter `data/GeoDaten` erwartet.
 | Grundwasserneubildung | GeoTIFF (`.tif`) | Räumlicher Referenzvergleich |
 | Sickerwasserrate | GeoTIFF (`.tif`) | Plausibilisierung der Perkolation |
 
-Die Quellen, Auflösungen und Aufbereitungsschritte sind in Kapitel 3 des Abschlussberichts dokumentiert. Und unteranderem hier nicht in einen Ordner aufgelistet, da dieser 20gb groß ist und nicht vollständig in Git passt.
+Die Eingangsdaten sind aufgrund ihres Umfangs von etwa 20 GB nicht
+Bestandteil dieses Repositorys. Die benötigten Datensätze und Dateiformate
+sind hier aufgeführt. Quellen, räumliche und zeitliche Auflösungen sowie
+die durchgeführten Aufbereitungsschritte sind in Kapitel 3 des
+Abschlussberichts dokumentiert.
 
 ## Konfiguration und Start
 
@@ -61,7 +56,7 @@ angepasst werden. Projektrelative Pfade werden empfohlen.
 Start:
 
 ```bash
-python HydroMod_v9_4.py
+python HydroMod.py
 ```
 
 ## Modellzeiträume
@@ -71,6 +66,24 @@ python HydroMod_v9_4.py
 - Validierung: 2024–2025
 
 Die Kalibrierung erfolgt gemeinsam an allen drei Pegeln mit Differential Evolution und anschließender lokaler Verfeinerung.
+
+## Modellablauf
+
+Zu Beginn werden die räumlichen Eingangsdaten auf das gemeinsame
+20-m-Modellraster übertragen. Das digitale Geländemodell wird konditioniert
+und zur Ableitung der D8-Fließrichtungen sowie der Einzugsgebiete der drei
+Pegel verwendet.
+
+Für jeden Tag wird die Wasserbilanz rasterzellenweise berechnet. Der
+Niederschlag wird auf Evapotranspiration, Bodenwasserspeicherung,
+Schnellabfluss, Zwischenabfluss und Grundwasserneubildung aufgeteilt.
+Die Grundwasserneubildung speist einen schnellen und einen langsamen
+Grundwasserspeicher.
+
+Die erzeugten Abflusskomponenten werden anschließend anhand
+zellspezifischer Reisezeiten über das D8-Fließnetz zu den Pegeln Alsfeld,
+Heidelbach und Röllshausen geroutet. Kalibrierung und Bewertung erfolgen
+gemeinsam für die drei verschachtelten Pegeleinzugsgebiete.
 
 ## Ergebnisse
 
@@ -92,7 +105,7 @@ gespeichert. Erzeugt werden unter anderem:
 
 ## Einschränkungen
 
-Das Modell enthält kein Schnee- oder Frostmodul. Das D8-Routing ist kein hydraulisches Flussmodell; Kanalquerschnitte, Rückstau, Überflutungen und Auenretention werden nicht explizit simuliert. Die meteorologischen Daten liegen räumlich gröber als das 20-m-Modellraster vor. Das Modell könnte also durch Nachbearbeitung darauf erweitert werden.
+Das Modell enthält kein Schnee- oder Frostmodul. Das D8-Routing ist kein hydraulisches Flussmodell; Kanalquerschnitte, Rückstau, Überflutungen und Auenretention werden nicht explizit simuliert. Die meteorologischen Daten liegen räumlich gröber als das 20-m-Modellraster vor.
 
 ## Autoren
 
