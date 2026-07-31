@@ -92,7 +92,7 @@ gespeichert. Erzeugt werden unter anderem:
 
 ## Einschränkungen
 
-Das Modell enthält kein Schnee- oder Frostmodul. Das D8-Routing ist kein hydraulisches Flussmodell; Kanalquerschnitte, Rückstau, Überflutungen und Auenretention werden nicht explizit simuliert. Die meteorologischen Daten liegen räumlich gröber als das 20-m-Modellraster vor.
+Das Modell enthält kein Schnee- oder Frostmodul. Das D8-Routing ist kein hydraulisches Flussmodell; Kanalquerschnitte, Rückstau, Überflutungen und Auenretention werden nicht explizit simuliert. Die meteorologischen Daten liegen räumlich gröber als das 20-m-Modellraster vor. Das Modell könnte also durch Nachbearbeitung darauf erweitert werden.
 
 ## Autoren
 
