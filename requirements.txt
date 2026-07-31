@@ -1,0 +1,13 @@
+numpy
+pandas
+matplotlib
+geopandas
+rasterio
+shapely
+affine
+scipy
+xarray
+rioxarray
+fiona
+dask
+netCDF4
