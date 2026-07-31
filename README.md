@@ -1,8 +1,8 @@
-# HydroMod Schwalm v9.4
+# HydroMod Schwalm
 
 ## Kurzbeschreibung
 
-HydroMod v9.4 ist ein tägliches, vollständig rasterverteiltes Niederschlag-Abfluss-Modell für die Schwalm in Mittelhessen. Das Modell arbeitet auf einem 20-m-Raster und simuliert den Tagesabfluss an den Pegeln Alsfeld, Heidelbach und Röllshausen. Für alle drei verschachtelten Pegeleinzugsgebiete wird ein gemeinsamer Parametersatz verwendet.
+HydroMod ist ein tägliches, vollständig rasterverteiltes Niederschlag-Abfluss-Modell für die Schwalm in Mittelhessen. Das Modell arbeitet auf einem 20-m-Raster und simuliert den Tagesabfluss an den Pegeln Alsfeld, Heidelbach und Röllshausen. Für alle drei verschachtelten Pegeleinzugsgebiete wird ein gemeinsamer Parametersatz verwendet.
 
 Berücksichtigt werden Niederschlag, potenzielle und tatsächliche Evapotranspiration, Bodenwasserspeicherung, Schnellabfluss, Zwischenabfluss, Grundwasserneubildung, schneller und langsamer Basisabfluss sowie ein D8-Routing mit zellspezifischen Reisezeiten.
 
