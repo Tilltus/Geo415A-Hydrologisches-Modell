@@ -46,7 +46,7 @@ Die Eingangsdaten werden unter `data/GeoDaten` erwartet.
 | Grundwasserneubildung | GeoTIFF (`.tif`) | Räumlicher Referenzvergleich |
 | Sickerwasserrate | GeoTIFF (`.tif`) | Plausibilisierung der Perkolation |
 
-Die Quellen, Auflösungen und Aufbereitungsschritte sind in Kapitel 3 des Abschlussberichts dokumentiert.
+Die Quellen, Auflösungen und Aufbereitungsschritte sind in Kapitel 3 des Abschlussberichts dokumentiert. Und unteranderem hier nicht in einen Ordner aufgelistet, da dieser 20gb groß ist und nicht vollständig in Git passt.
 
 ## Konfiguration und Start
 
